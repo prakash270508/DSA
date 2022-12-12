@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete array</title>
+
+</head>
+
+<body>
+    <h2 id="data" style="text-align: center;"></h2>
+    <!-- <input type="text" name="" id="data" style="width: 300px;" placeholder="Your data will apear here"><br> -->
+    <input type="number" id="position" placeholder="Enter the position">
+    <!-- <input type="number" id="newElement" placeholder="Enter the input element"> -->
+    <button type="submit" id="submit" onclick="insertElement()">Remove</button><br>
+    <input type="text" name="" id="textArea" placeholder="Your data now is">
+
+
+    <script>
+        //Without taking input
+
+        // let data = [23, 45, 6, 76, 54]
+
+        // let position = 1;
+        // for (let i = position; i <= data.length - 1; i++) {
+        //     //  console.log(data[i])
+        //     data[i] = data[i + 1]
+        //     // console.log(data[i])
+        // }
+        // data.length = data.length - 1;
+        // console.log(data);
+
+        //After taking inputs
+
+        let data = [Math.floor(Math.random()*10), Math.floor(Math.random()*10), Math.floor(Math.random()*5), 5, 6, 86, Math.floor(Math.random()*100), 43, 23];
+        let dta = document.getElementById("data")
+        // dta.value=("your data is "+ data)
+        dta.innerText=("your data is "+ data)
+        function insertElement() {
+            let position = document.getElementById("position").value;
+            position = parseInt(position)
+            let textArea = document.getElementById("textArea")
+            // let newElement = document.getElementById("newElement").value;
+
+            for (let i = position; i <= data.length - 1; i++) {
+                // console.log(i)
+                data[i] = data[i + 1];
+            }
+            data.length = data.length - 1;
+            textArea.value = data
+        }
+
+        
+
+    </script>
+</body>
+
+</html>

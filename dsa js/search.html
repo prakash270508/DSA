@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching</title>
+</head>
+
+<body>
+    <input type="number" id="position" placeholder="Enter the element">
+    <button type="submit" id="submit" onclick="insertElement()">search</button><br>
+
+
+    <script>
+        // let data = [2, 3, 4, 5, 6, 3, 86, 54, 43, 23];
+        // let length = data.length
+        // console.log(length)
+        // let ele = 2;
+        // let index = undefined;
+        // for (let i = 0; i < data.length - 1; i++) {
+        //     if (data[i] === ele) {
+        //         index = i
+        //     }
+        // }
+        // console.log(index);
+
+        //By default function
+        // console.log(data.indexOf(ele))
+
+
+        //By button method
+        function insertElement() {
+            let data = [2, 3, 4, 5, 6, 34, 86, 54, 43, 23];
+            let index = undefined;
+            let position = document.getElementById("position").value;
+            position = parseInt(position)
+            // let newElement = document.getElementById("newElement").value;
+
+            for (let i = 0; i <= data.length - 1; i++) {
+                // console.log(i)
+                if (data[i]=== position){
+                    index = i
+                }
+            }
+            if (index===0) {
+                alert("Your data is at "+ (index +1) +"st position in the data")
+            }
+            if (index===1) {
+                alert("Your data is at "+ (index +1) +"nd position in the data")
+            }
+            if (index===2) {
+                alert("Your data is at "+ (index +1) +"rd position in the data")
+            }
+            if(index<=data.length) {
+                alert("Your data is at "+ (index +1) +"th position in the data")
+            }else{
+                alert("Not in the list")
+            }
+        }
+    </script>
+</body>
+
+</html>

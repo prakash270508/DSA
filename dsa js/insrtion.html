@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Insertion</title>
+</head>
+
+<body>
+    <input type="number" id="position" placeholder="Enter the position">
+    <input type="number" id="newElement" placeholder="Enter the input element">
+    <button type="submit" id="submit" onclick="insertElement()">Submit your details</button>
+
+    <script>
+        function insertElement() {
+            let arry = [2, 3, 4, 5, 6, 86, 54, 43, 23];
+            let position = document.getElementById("position").value;
+            let newElement = document.getElementById("newElement").value;
+
+            for (let i = arry.length - 1; i >= 0; i--) {
+                // console.log(i)
+                if (i >= position) {
+                    arry[i + 1] = arry[i]
+                    if (i === position) {
+                        arry[i] = newElement;
+                    }
+                }
+            }
+            alert(arry)
+        }
+    </script>
+    <script src="arry_insertion.js"></script>
+</body>
+
+</html>

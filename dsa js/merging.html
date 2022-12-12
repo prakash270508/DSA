@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merging</title>
+</head>
+
+<body>
+
+    <script>
+        let data1 = [5, 2, 7, 8, 12, 55, 70];
+        data1 = data1.sort(function (a, b) { return a - b })
+        let data2 = [3, 4, 11, 28, 10, 54]
+        data2 = data2.sort(function (a, b) { return a - b })
+        let data3 = [];
+        let d1 = 0;
+        let d2 = 0;
+        let d3 = 0;
+
+
+        //By For loop
+        // for (let i = 0; i < data1.length; i++) {
+        //     data3[i] = data1[i]
+        // }
+        // // console.log(data3);
+        // for (let i = 0; i < data2.length; i++) {
+        //     data3[data1.length + i] = data2[i]
+
+        // }
+        // // console.log(data3);
+        // console.log(data3)
+
+        // //Default Method 
+        // let data4 = [...data1, ...data2]
+        // data4.sort(function(a, b){return a-b});
+        // console.log(data4)
+
+        // By while loop
+        while (d1 < data1.length && d2 < data2.length) {
+            if (data1[d1] < data2[d2]) {
+                data3[d3] = data1[d1]
+                d1++
+            } else {
+                data3[d3] = data2[d2]
+                d2++
+            }
+            d3++
+        }
+        while (d1 < data1.length) {
+            data3[d3] = data1[d1]
+            d1++
+            d3++
+        }
+        console.log(data3);
+    </script>
+</body>
+
+</html>
